@@ -1,0 +1,68 @@
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - PATCH
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            exposedHeaders: "*"
+      discovery:
+        locator:
+          enabled: true
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: cart-service
+          uri: lb://CART-SERVICE
+          predicates:
+            - Path=/api/cart/**
+          filters:
+            - StripPrefix=1
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - StripPrefix=1
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8081/realms/test
+        registration:
+          keycloak:
+            provider: keycloak
+            client-id: gateway
+            client-secret: BERya6F4XA3xwjjl7xyoXAbv2IP5tCCd
+            authorization-grant-type: authorization_code
+            scope:
+              - openid
+              - email
+              - profile
+              - roles
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8765
+
+

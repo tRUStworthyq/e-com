@@ -1,0 +1,12 @@
+
+
+spring:
+  application:
+    name: test
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/test
+server:
+  port: 8082

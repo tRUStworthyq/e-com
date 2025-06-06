@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0d7034c4-404e-49cd-b0d1-23334f20b365" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/CartServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/application/dto/CartDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/application/dto/CartItemDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/application/dto/ItemQuantityDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/application/mapper/CartMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/application/service/AppCartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/application/service/CartServiceAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/domain/exception/CartNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/domain/model/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/domain/model/CartItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/domain/repository/CartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/domain/service/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/domain/service/CartServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/infrastructure/config/DomainConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/infrastructure/config/MongoDBConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/infrastructure/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/infrastructure/integration/kafka/consumer/OrdersConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/infrastructure/integration/kafka/dto/ClearCartEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/infrastructure/integration/kafka/dto/CreateOrderEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/infrastructure/integration/rest/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/infrastructure/repository/CartRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/java/ru/ecommerce/cartservice/infrastructure/repository/DataMongoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CartService/src/test/java/ru/ecommerce/cartservice/CartServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka/src/main/java/ru/ecommerce/eureka/EurekaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Eureka/src/test/java/ru/ecommerce/eureka/EurekaApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/src/main/java/ru/ecommerce/gateway/GatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/src/main/java/ru/ecommerce/gateway/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/src/main/java/ru/ecommerce/gateway/controller/AuthInfoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Gateway/src/test/java/ru/ecommerce/gateway/GatewayApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/OrderServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/application/dto/request/CartItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/application/dto/response/OrderDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/application/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/application/service/AppOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/application/service/OrderServiceAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/domain/exception/DomainException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/domain/exception/EntityNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/domain/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/domain/model/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/domain/model/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/domain/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/domain/service/DomainOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/domain/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/infrastructure/config/DomainConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/infrastructure/config/MongoDBConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/infrastructure/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/infrastructure/integration/kafka/consumer/CartClearanceConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/infrastructure/integration/kafka/dto/ClearCartEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/infrastructure/integration/kafka/dto/CreateOrderEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/infrastructure/integration/rest/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/infrastructure/repository/DataMongoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/java/ru/ecommerce/orderservice/infrastructure/repository/OrderRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrderService/src/test/java/ru/ecommerce/orderservice/OrderServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/main/java/ru/ecommerce/test/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/main/java/ru/ecommerce/test/TestApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/main/java/ru/ecommerce/test/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/src/test/java/ru/ecommerce/test/TestApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/keycloak/realm-export.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Record" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/Gateway" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2xm9hRMfT30jAky9vEm0nGcdr5m" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.CartServiceApplication.executor": "Run",
+    "Spring Boot.EurekaApplication.executor": "Run",
+    "Spring Boot.GatewayApplication.executor": "Run",
+    "Spring Boot.OrderServiceApplication.executor": "Run",
+    "Spring Boot.TestApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/dolgi/IdeaProjects/lab11/infra/keycloak",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dolgi\IdeaProjects\lab11\infra\keycloak" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+    <configuration name="CartServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="CartService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ecommerce.cartservice.CartServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ecommerce.eureka.EurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ecommerce.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="OrderService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ecommerce.orderservice.OrderServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Test" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ecommerce.test.TestApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.OrderServiceApplication" />
+      <item itemvalue="Spring Boot.CartServiceApplication" />
+      <item itemvalue="Spring Boot.EurekaApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.TestApplication" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d7034c4-404e-49cd-b0d1-23334f20b365" name="Changes" comment="" />
+      <created>1748531237891</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748531237891</updated>
+      <workItem from="1748531238932" duration="1254000" />
+      <workItem from="1748532503487" duration="69000" />
+      <workItem from="1748532649985" duration="137000" />
+      <workItem from="1748532793161" duration="14000" />
+      <workItem from="1748532813710" duration="115000" />
+      <workItem from="1748532937560" duration="21886000" />
+      <workItem from="1748955336869" duration="22941000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

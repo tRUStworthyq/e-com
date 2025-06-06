@@ -1,0 +1,129 @@
+services:
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:latest
+    command:
+      - start-dev
+      - --import-realm
+    ports:
+      - 8081:8081
+    volumes:
+      - ./infra/keycloak/:/opt/keycloak/data/import/
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HTTP_PORT: 8081
+#      KC_HOSTNAME_URL: http://localhost:8080
+#      KC_HOSTNAME_ADMIN_URL: http://localhost:8080
+#      KC_HOSTNAME_STRICT_BACKCHANNEL: true
+#      KC_HTTP_RELATIVE_PATH: /
+#      KC_HTTP_ENABLED: true
+#      KC_HEALTH_ENABLED: true
+#      KC_METRICS_ENABLED: true
+#    extra_hosts:
+#      - "host.docker.internal:host-gateway"
+#    healthcheck:
+#      test: ['CMD-SHELL', '[ -f /tmp/HealthCheck.java ] || echo "public class HealthCheck { public static void main(String[] args) throws java.lang.Throwable { System.exit(java.net.HttpURLConnection.HTTP_OK == ((java.net.HttpURLConnection)new java.net.URL(args[0]).openConnection()).getResponseCode() ? 0 : 1); } }" > /tmp/HealthCheck.java && java /tmp/HealthCheck.java http://localhost:8080/auth/health/live']
+#      interval: 5s
+#      timeout: 5s
+#      retries: 20
+
+  redis:
+    image: redis:7.0-alpine
+    container_name: my-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.0
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+
+  kafka:
+    image: confluentinc/cp-kafka:7.3.0
+    container_name: kafka
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    healthcheck:
+      test: [ "CMD", "kafka-topics", "--bootstrap-server", "localhost:9092", "--list" ]
+    depends_on:
+      - zookeeper
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+    depends_on:
+      - kafka
+
+  kafka-init:
+    image: confluentinc/cp-kafka:7.3.0
+    container_name: kafka-init
+    depends_on:
+      kafka:
+        condition: service_healthy
+    command: |
+      bash -c "
+      kafka-topics --bootstrap-server kafka:29092 --create --if-not-exists --topic orders --partitions 3 --replication-factor 1
+      kafka-topics --bootstrap-server kafka:29092 --create --if-not-exists --topic cart-clearance --partitions 3 --replication-factor 1
+      exit 0
+      "
+      
+    
+
+  mongodb:
+    image: mongo:6.0
+    container_name: mongodb
+    command: mongod --replSet rs0 --bind_ip_all
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  mongo-init:
+    image: mongo:6.0
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    restart: on-failure
+    command: >
+      bash -c "sleep 10 && 
+      mongosh --host mongodb --eval '
+        rs.initiate({
+          _id: \"rs0\",
+          members: [{_id: 0, host: \"localhost:27017\"}]
+        })'"
+
+volumes:
+  redis_data:
+  mongodb_data:
