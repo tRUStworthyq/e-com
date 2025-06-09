@@ -1,6 +1,7 @@
 package ru.ecommerce.cartservice.application.service;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.ecommerce.cartservice.domain.model.Cart;
 import ru.ecommerce.cartservice.domain.model.CartItem;
@@ -11,6 +12,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @Service
 public class CartServiceAdapter implements AppCartService {
+
+    @Autowired
     private CartService cartService;
 
     @Override

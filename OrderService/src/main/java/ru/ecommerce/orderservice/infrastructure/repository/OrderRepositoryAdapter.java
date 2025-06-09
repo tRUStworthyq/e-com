@@ -1,6 +1,7 @@
 package ru.ecommerce.orderservice.infrastructure.repository;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import java.util.UUID;
 @Component
 @AllArgsConstructor
 public class OrderRepositoryAdapter implements OrderRepository {
+    @Autowired
     private DataMongoRepository repository;
     @Override
     public Order save(Order order) {
@@ -21,12 +23,22 @@ public class OrderRepositoryAdapter implements OrderRepository {
     }
 
     @Override
-    public Optional<Order> findById(UUID id) {
+    public Optional<Order> findByIdAndStatus(UUID id) {
         return repository.findByIdAndStatus(id, OrderStatus.CREATED);
     }
 
     @Override
     public Page<Order> findByUserId(UUID userId, Pageable pageable) {
         return repository.findByUserIdAndStatus(userId, pageable, OrderStatus.CREATED);
+    }
+
+    @Override
+    public Optional<Order> findByIdPendingOrders(UUID id) {
+        return repository.findByIdAndStatus(id, OrderStatus.PENDING);
+    }
+
+    @Override
+    public Optional<Order> findById(UUID id) {
+        return repository.findById(id);
     }
 }

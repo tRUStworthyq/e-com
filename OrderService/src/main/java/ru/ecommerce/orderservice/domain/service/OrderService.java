@@ -13,5 +13,6 @@ public interface OrderService {
     boolean cancelOrder(UUID id, UUID userId) throws AccessDeniedException;
     List<Order> findOrdersByUserId(UUID userId, Pageable pageable);
     boolean acceptOrder(UUID orderId);
-
+    Order findPendingOrderById(UUID id);
+    Order findById(UUID id);
 }

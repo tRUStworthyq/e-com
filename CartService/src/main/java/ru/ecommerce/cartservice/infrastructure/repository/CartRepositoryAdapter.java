@@ -1,6 +1,7 @@
 package ru.ecommerce.cartservice.infrastructure.repository;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.ecommerce.cartservice.domain.model.Cart;
 import ru.ecommerce.cartservice.domain.repository.CartRepository;
@@ -13,6 +14,7 @@ import java.util.UUID;
 public class CartRepositoryAdapter implements CartRepository {
 
 
+    @Autowired
     private DataMongoRepository cartRepository;
 
 

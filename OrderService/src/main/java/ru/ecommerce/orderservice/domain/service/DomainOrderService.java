@@ -1,7 +1,5 @@
 package ru.ecommerce.orderservice.domain.service;
 
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import ru.ecommerce.orderservice.application.dto.request.CartItem;
 import ru.ecommerce.orderservice.domain.exception.EntityNotFoundException;
@@ -27,7 +25,7 @@ public class DomainOrderService implements OrderService {
 
     @Override
     public boolean cancelOrder(UUID id, UUID userId) throws AccessDeniedException {
-        Order order = orderRepository.findById(id)
+        Order order = orderRepository.findByIdAndStatus(id)
                 .orElseThrow(() -> new EntityNotFoundException("Order with id " + id + " not exists"));
         if (!userId.equals(order.getUserId())) {
             throw new AccessDeniedException("Access denied");
@@ -47,8 +45,21 @@ public class DomainOrderService implements OrderService {
 
     @Override
     public boolean acceptOrder(UUID orderId) {
-        Order order = orderRepository.findById(orderId)
-                .orElseThrow(() -> new EntityNotFoundException("Order with id " + orderId + " not exists"));
-        return order.acceptOrder();
+        Order order = findPendingOrderById(orderId);
+        boolean isAccepted = order.acceptOrder();
+        orderRepository.save(order);
+        return isAccepted;
+    }
+
+    @Override
+    public Order findPendingOrderById(UUID id) {
+        return orderRepository.findByIdPendingOrders(id)
+                .orElseThrow(() -> new EntityNotFoundException("Order with id " + id + " not exists"));
+    }
+
+    @Override
+    public Order findById(UUID id) {
+        return orderRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Order with id " + id + " not exists"));
     }
 }

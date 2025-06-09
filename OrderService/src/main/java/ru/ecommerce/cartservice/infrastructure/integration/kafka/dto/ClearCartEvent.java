@@ -1,4 +1,4 @@
-package ru.ecommerce.orderservice.infrastructure.integration.kafka.dto;
+package ru.ecommerce.cartservice.infrastructure.integration.kafka.dto;
 
 import java.util.UUID;
 

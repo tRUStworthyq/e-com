@@ -1,6 +1,8 @@
 package ru.ecommerce.cartservice.infrastructure.integration.rest;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
@@ -18,6 +20,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CartController {
 
+    @Autowired
     private AppCartService cartService;
 
     @GetMapping("/")
@@ -27,7 +30,7 @@ public class CartController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<CartDto> addItemToCart(@AuthenticationPrincipal Jwt jwt, CartItemDto itemDto) {
+    public ResponseEntity<CartDto> addItemToCart(@AuthenticationPrincipal Jwt jwt, @RequestBody CartItemDto itemDto) {
         UUID userId = UUID.fromString(jwt.getSubject());
         return ResponseEntity.ok(CartMapper.toDto(cartService.addItemToCart(userId, CartMapper.toCartItem(itemDto))));
     }

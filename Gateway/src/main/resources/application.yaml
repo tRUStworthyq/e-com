@@ -25,21 +25,30 @@ spring:
       discovery:
         locator:
           enabled: true
-      default-filters:
-        - TokenRelay
+          lower-case-service-id: true
       routes:
         - id: cart-service
-          uri: lb://CART-SERVICE
+          uri: lb://cart-service
           predicates:
             - Path=/api/cart/**
           filters:
-            - StripPrefix=1
+            - TokenRelay=
         - id: order-service
-          uri: lb://ORDER-SERVICE
+          uri: lb://order-service
           predicates:
             - Path=/api/order/**
           filters:
+            - TokenRelay=
+        - id: ui
+          uri: http://localhost:3000
+          predicates:
+            - Path=/ui/**
+          filters:
             - StripPrefix=1
+        - id: static
+          uri: http://localhost:3000
+          predicates:
+            - Path=/static/**
   security:
     oauth2:
       client:
@@ -50,7 +59,7 @@ spring:
           keycloak:
             provider: keycloak
             client-id: gateway
-            client-secret: BERya6F4XA3xwjjl7xyoXAbv2IP5tCCd
+            client-secret: ${SECRET}
             authorization-grant-type: authorization_code
             scope:
               - openid
@@ -64,5 +73,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 server:
   port: 8765
-
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
 

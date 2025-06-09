@@ -3,6 +3,7 @@ package ru.ecommerce.gateway.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.oauth2.client.oidc.web.server.logout.OidcClientInitiatedServerLogoutSuccessHandler;
@@ -13,6 +14,7 @@ import org.springframework.security.oauth2.client.web.server.ServerOAuth2Authori
 import org.springframework.security.oauth2.client.web.server.ServerOAuth2AuthorizedClientRepository;
 import org.springframework.security.oauth2.client.web.server.WebSessionServerOAuth2AuthorizedClientRepository;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.authentication.RedirectServerAuthenticationSuccessHandler;
 import org.springframework.security.web.server.authentication.logout.*;
 import org.springframework.security.web.server.header.ClearSiteDataServerHttpHeadersWriter;
 import org.springframework.session.data.redis.config.annotation.web.server.EnableRedisWebSession;
@@ -33,7 +35,8 @@ public class SecurityConfig {
                         authorizeExchangeSpec.pathMatchers(
                                 "/actuator/**",
                                 "/access-token/**",
-                                "/id-token"
+                                "/username",
+                                "/manifest.json"
                         ).permitAll().anyExchange().authenticated())
                 .oauth2Login(oAuth2LoginSpec ->
                         oAuth2LoginSpec.authorizationRequestResolver(resolver)
@@ -41,7 +44,8 @@ public class SecurityConfig {
                 .logout(logoutSpec ->
                         logoutSpec.logoutSuccessHandler(logoutSuccessHandler)
                                 .logoutHandler(logoutHandler))
-                .csrf(Customizer.withDefaults())
+                .csrf(ServerHttpSecurity.CsrfSpec::disable)
+//                .csrf(Customizer.withDefaults())
                 .build();
     }
 
@@ -75,5 +79,6 @@ public class SecurityConfig {
                 )
         );
     }
+
 
 }

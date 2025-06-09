@@ -25,7 +25,10 @@ import java.util.concurrent.TimeoutException;
 @Service
 @AllArgsConstructor
 public class OrderServiceAdapter implements AppOrderService {
+
+    @Autowired
     private OrderService orderService;
+    @Autowired
     private KafkaTemplate<String, CreateOrderEvent> kafkaTemplate;
 
     private static final String CREATE_ORDER_TOPIC = "orders";
@@ -70,5 +73,15 @@ public class OrderServiceAdapter implements AppOrderService {
     @Override
     public boolean acceptOrder(UUID orderId) {
         return orderService.acceptOrder(orderId);
+    }
+
+    @Override
+    public Order findPendingOrderById(UUID id) {
+        return orderService.findPendingOrderById(id);
+    }
+
+    @Override
+    public Order findById(UUID id) {
+        return orderService.findById(id);
     }
 }

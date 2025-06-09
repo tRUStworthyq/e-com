@@ -1,6 +1,7 @@
 package ru.ecommerce.orderservice.infrastructure.integration.rest;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class OrderController {
 
+    @Autowired
     private AppOrderService orderService;
 
     @GetMapping("/orders")
@@ -31,6 +33,11 @@ public class OrderController {
                 .map(OrderMapper::toDto)
                 .toList()
         );
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<OrderDto> findOrderById(@PathVariable("id") UUID id) {
+        return ResponseEntity.ok(OrderMapper.toDto(orderService.findById(id)));
     }
 
     @PostMapping("/create")

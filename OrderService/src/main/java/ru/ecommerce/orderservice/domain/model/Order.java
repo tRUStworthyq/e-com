@@ -1,6 +1,6 @@
 package ru.ecommerce.orderservice.domain.model;
 
-import lombok.Getter;
+
 import ru.ecommerce.orderservice.application.dto.request.CartItem;
 import ru.ecommerce.orderservice.domain.exception.DomainException;
 
@@ -81,7 +81,7 @@ public class Order {
     private Order() {
     }
 
-    public UUID getId() {
+    public UUID getId()  {
         return id;
     }
 

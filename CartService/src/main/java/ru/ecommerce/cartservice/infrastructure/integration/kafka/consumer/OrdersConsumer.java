@@ -1,6 +1,7 @@
 package ru.ecommerce.cartservice.infrastructure.integration.kafka.consumer;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.retry.annotation.Backoff;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 import ru.ecommerce.cartservice.application.service.AppCartService;
 import ru.ecommerce.cartservice.domain.exception.CartNotFoundException;
 import ru.ecommerce.cartservice.infrastructure.integration.kafka.dto.ClearCartEvent;
-import ru.ecommerce.cartservice.infrastructure.integration.kafka.dto.CreateOrderEvent;
+import ru.ecommerce.orderservice.infrastructure.integration.kafka.dto.CreateOrderEvent;
 
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
@@ -20,7 +21,9 @@ import java.util.concurrent.TimeoutException;
 @AllArgsConstructor
 public class OrdersConsumer {
 
+    @Autowired
     private AppCartService cartService;
+    @Autowired
     private KafkaTemplate<String, ClearCartEvent> kafkaTemplate;
 
 

@@ -12,13 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AuthInfoController {
 
-    @GetMapping("/access-token")
-    public OAuth2AccessToken getAccessToken(@RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient client) {
-        return client.getAccessToken();
-    }
 
-    @GetMapping("/id-token")
-    public OidcIdToken getIdToken(@AuthenticationPrincipal OidcUser oidcUser) {
-        return oidcUser.getIdToken();
+    @GetMapping("/username")
+    public String getUsername(@AuthenticationPrincipal OidcUser oidcUser) {
+        return oidcUser.getPreferredUsername();
     }
 }
