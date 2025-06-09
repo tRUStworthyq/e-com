@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d7034c4-404e-49cd-b0d1-23334f20b365" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +57,7 @@
     "Spring Boot.GatewayApplication.executor": "Run",
     "Spring Boot.OrderServiceApplication.executor": "Run",
     "Spring Boot.TestApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
