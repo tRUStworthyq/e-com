@@ -23,8 +23,12 @@ spring:
   application:
     name: order-service
 server:
-  port: 0
+  port: 8086
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+
+springdoc:
+  packages-to-exclude: ru.ecommerce.domain
+

@@ -62,6 +62,8 @@
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/demo (1)/demo",
+    "git-widget-placeholder": "Merging master",
+    "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,7 +91,67 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
+  <component name="RunManager" selected="JUnit.CartTests">
+    <configuration name="CartTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CartService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.ecommerce.cartservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.ecommerce.cartservice" />
+      <option name="MAIN_CLASS_NAME" value="ru.ecommerce.cartservice.CartTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DomainOrderServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OrderService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.ecommerce.orderservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.ecommerce.orderservice" />
+      <option name="MAIN_CLASS_NAME" value="ru.ecommerce.orderservice.DomainOrderServiceTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderServiceApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OrderService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.ecommerce.orderservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.ecommerce.orderservice" />
+      <option name="MAIN_CLASS_NAME" value="ru.ecommerce.orderservice.OrderServiceApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OrderService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.ecommerce.orderservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.ecommerce.orderservice" />
+      <option name="MAIN_CLASS_NAME" value="ru.ecommerce.orderservice.OrderTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CartServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="CartService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.ecommerce.cartservice.CartServiceApplication" />
@@ -126,12 +188,25 @@
       </method>
     </configuration>
     <list>
+
+      <item itemvalue="JUnit.CartTests" />
+      <item itemvalue="JUnit.DomainOrderServiceTests" />
+      <item itemvalue="JUnit.OrderServiceApplicationTests" />
+      <item itemvalue="JUnit.OrderTests" />
       <item itemvalue="Spring Boot.OrderServiceApplication" />
       <item itemvalue="Spring Boot.CartServiceApplication" />
       <item itemvalue="Spring Boot.EurekaApplication" />
       <item itemvalue="Spring Boot.GatewayApplication" />
       <item itemvalue="Spring Boot.TestApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CartTests" />
+        <item itemvalue="JUnit.DomainOrderServiceTests" />
+        <item itemvalue="JUnit.OrderServiceApplicationTests" />
+        <item itemvalue="JUnit.OrderTests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -140,19 +215,8 @@
       <created>1748531237891</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1748531237891</updated>
-      <workItem from="1748531238932" duration="1254000" />
-      <workItem from="1748532503487" duration="69000" />
-      <workItem from="1748532649985" duration="137000" />
-      <workItem from="1748532793161" duration="14000" />
-      <workItem from="1748532813710" duration="115000" />
-      <workItem from="1748532937560" duration="21886000" />
-      <workItem from="1748955336869" duration="22941000" />
-      <workItem from="1749215801519" duration="1384000" />
-      <workItem from="1749286738817" duration="16741000" />
-      <workItem from="1749320413113" duration="2108000" />
-      <workItem from="1749490076583" duration="11824000" />
-      <workItem from="1749636928097" duration="57000" />
+      <updated>1749541439300</updated>
+      <workItem from="1750146481407" duration="4940000" />
     </task>
     <servers />
   </component>

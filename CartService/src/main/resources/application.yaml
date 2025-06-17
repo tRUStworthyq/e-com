@@ -5,6 +5,7 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8081/realms/test
+          jwk-set-uri: http://localhost:8081/realms/test/protocol/openid-connect/certs
   data:
     mongodb:
       uri: mongodb://localhost:27017/cart-service?replicaSet=rs0&retryWrites=true

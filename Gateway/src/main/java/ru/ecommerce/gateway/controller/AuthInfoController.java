@@ -17,4 +17,9 @@ public class AuthInfoController {
     public String getUsername(@AuthenticationPrincipal OidcUser oidcUser) {
         return oidcUser.getPreferredUsername();
     }
+
+    @GetMapping("/access-token")
+    public OAuth2AccessToken getToken(@RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient client) {
+        return client.getAccessToken();
+    }
 }
