@@ -1,0 +1,3 @@
+[submodule "product-service"]
+	path = ProductService
+	url = https://github.com/tRUStworthyq/product-service.git

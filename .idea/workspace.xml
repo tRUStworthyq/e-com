@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="becd07a6-4ac5-4199-9e8c-a36baf80a0ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductService" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/k8s/namespaces/product-namespace.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/k8s/network/ingress.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/k8s/postgres/values.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/k8s/product-service/configs/config-map.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/k8s/product-service/deployment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/k8s/product-service/secrets/secret.yaml.template" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infra/k8s/product-service/service.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +58,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ProductServiceApplication.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
@@ -146,7 +133,7 @@
       <workItem from="1770157115600" duration="60000" />
       <workItem from="1770157182525" duration="1276000" />
       <workItem from="1770198043041" duration="27394000" />
-      <workItem from="1770276651244" duration="22620000" />
+      <workItem from="1770276651244" duration="23668000" />
     </task>
     <servers />
   </component>
