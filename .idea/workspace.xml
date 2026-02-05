@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="becd07a6-4ac5-4199-9e8c-a36baf80a0ef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProductService" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/k8s/namespaces/product-namespace.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/k8s/network/ingress.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/k8s/postgres/values.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/k8s/product-service/configs/config-map.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/k8s/product-service/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/k8s/product-service/secrets/secret.yaml.template" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/k8s/product-service/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "contexts": [
+    {
+      "name": "minikube",
+      "originalNamespace": "default"
+    }
+  ],
+  "isMigrated": true
+}]]></component>
+  <component name="KubernetesSettings">
+    <option name="contextName" value="minikube" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="39B6Rl8rjKYSoBrwM42vdvwguyn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "JUnit.DefaultProductServiceTests.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ProductServiceApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "21",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.productservice.repository" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\e-com\infra\k8s\product-service" />
+      <recent name="E:\e-com\ProductService\src\main\resources\db\changelog\v1.0" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.DefaultProductServiceTests">
+    <configuration name="All in ProductService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProductService" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefaultProductServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProductService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.productservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.productservice" />
+      <option name="MAIN_CLASS_NAME" value="org.example.productservice.DefaultProductServiceTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ProductService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.productservice.ProductServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DefaultProductServiceTests" />
+        <item itemvalue="JUnit.All in ProductService" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="becd07a6-4ac5-4199-9e8c-a36baf80a0ef" name="Changes" comment="" />
+      <created>1770142289752</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770142289752</updated>
+      <workItem from="1770142290830" duration="8725000" />
+      <workItem from="1770157115600" duration="60000" />
+      <workItem from="1770157182525" duration="1276000" />
+      <workItem from="1770198043041" duration="27394000" />
+      <workItem from="1770276651244" duration="22620000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

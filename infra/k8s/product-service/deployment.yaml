@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-service
+  namespace: product-namespace
+  labels:
+    app: product-service
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-service
+  template:
+    metadata:
+      labels:
+        app: product-service
+    spec:
+      containers:
+        - name: product-service
+          image: admin194/product-service:latest
+          ports:
+            - containerPort: 8081
+          env:
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: product-service-secret
+                  key: SPRING_DATASOURCE_URL
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: product-service-secret
+                  key: SPRING_DATASOURCE_USERNAME
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: product-service-secret
+                  key: SPRING_DATASOURCE_PASSWORD
+            - name: SPRING_LIQUIBASE_ENABLED
+              valueFrom:
+                configMapKeyRef:
+                  name: product-service-config
+                  key: SPRING_LIQUIBASE_ENABLED
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              valueFrom:
+                configMapKeyRef:
+                  name: product-service-config
+                  key: SPRING_JPA_HIBERNATE_DDL_AUTO
+            - name: SPRING_JPA_SHOW_SQL
+              valueFrom:
+                configMapKeyRef:
+                  name: product-service-config
+                  key: SPRING_JPA_SHOW_SQL
+            - name: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+              valueFrom:
+                configMapKeyRef:
+                  name: product-service-config
+                  key: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+            - name: SERVER_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: product-service-config
+                  key: SERVER_PORT
+            - name: SPRINGDOC_SWAGGER_UI_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: product-service-config
+                  key: SPRINGDOC_SWAGGER_UI_PATH
+            - name: SPRINGDOC_API_DOCS_PATH
+              valueFrom:
+                configMapKeyRef:
+                  name: product-service-config
+                  key: SPRINGDOC_API_DOCS_PATH
+            - name: LIQUIBASE_CHANGE_LOG
+              valueFrom:
+                configMapKeyRef:
+                  name: product-service-config
+                  key: LIQUIBASE_CHANGE_LOG
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+#          livenessProbe:
+#            tcpSocket:
+#              port: 8081
+#            initialDelaySeconds: 90
+#            periodSeconds: 10
+#          readinessProbe:
+#            tcpSocket:
+#              port: 8081
+#            initialDelaySeconds: 60
+#            periodSeconds: 5

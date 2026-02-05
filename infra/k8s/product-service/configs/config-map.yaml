@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: product-service-config
+  namespace: product-namespace
+data:
+  SPRING_LIQUIBASE_ENABLED: "true"
+  SPRING_JPA_HIBERNATE_DDL_AUTO: "validate"
+  SPRING_JPA_SHOW_SQL: "true"
+  SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: "org.hibernate.dialect.PostgreSQLDialect"
+  SERVER_PORT: "8081"
+  SPRINGDOC_SWAGGER_UI_PATH: "/swagger-ui.html"
+  SPRINGDOC_API_DOCS_PATH: "/api-docs"
+  LIQUIBASE_CHANGE_LOG: "classpath:db/changelog/db.changelog-master.yaml"

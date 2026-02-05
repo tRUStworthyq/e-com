@@ -1,0 +1,22 @@
+global:
+  postgresql:
+    auth:
+      # It should be replaced with secrets in the future.
+      database: products
+      username: sa
+      password: admin
+      postgresPassword: admin
+
+primary:
+  initdb:
+    scripts:
+      init.sql: |
+        CREATE SCHEMA IF NOT EXISTS public;
+
+  persistence:
+    enabled: true
+    size: 1Gi
+
+service:
+  type: ClusterIP
+  port: 5432
