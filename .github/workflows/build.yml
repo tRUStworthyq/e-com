@@ -53,7 +53,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Tests
-        working-directory: ${{ matrix.services }}
+        working-directory: ${{ matrix.service }}
         run: mvn test
 
       - name: Login to Docker Hub
