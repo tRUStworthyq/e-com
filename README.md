@@ -49,6 +49,7 @@ graph TD
 ## Roadmap
 
 * [x] Базовая логика микросервисов
-* [x] Dockerfile для каждого сервиса, общий docker-compose файл для всего приложения
-* [ ] CI/CD GitHub Actions
+* [x] Dockerfile для каждого сервиса
+* [x] CI GitHub Actions
+* [ ] Общий docker-compose файл для всего приложения
 * [ ] Манифесты в ```k8s/```
