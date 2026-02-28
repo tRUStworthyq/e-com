@@ -58,7 +58,9 @@ public class Order {
     }
 
     private static BigDecimal findSumPrice(List<CartItem> cartItems) {
-        Optional<BigDecimal> sum = cartItems.stream().map(CartItem::price).reduce(BigDecimal::add);
+        Optional<BigDecimal> sum = cartItems.stream()
+                .map(item -> item.price().multiply(BigDecimal.valueOf(item.quantity())))
+                .reduce(BigDecimal::add);
         if (sum.isPresent()) {
             return sum.get();
         } else {

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d7034c4-404e-49cd-b0d1-23334f20b365" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0d7034c4-404e-49cd-b0d1-23334f20b365" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +15,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -44,6 +41,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.OrderTests.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -62,8 +60,6 @@
     "jdk.selected.JAVA_MODULE": "21",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/demo (1)/demo",
-    "git-widget-placeholder": "Merging master",
-    "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,7 +87,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CartTests">
+  <component name="RunManager" selected="JUnit.OrderTests">
     <configuration name="CartTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CartService" />
       <extension name="coverage">
@@ -188,7 +184,6 @@
       </method>
     </configuration>
     <list>
-
       <item itemvalue="JUnit.CartTests" />
       <item itemvalue="JUnit.DomainOrderServiceTests" />
       <item itemvalue="JUnit.OrderServiceApplicationTests" />
@@ -201,10 +196,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderTests" />
         <item itemvalue="JUnit.CartTests" />
         <item itemvalue="JUnit.DomainOrderServiceTests" />
         <item itemvalue="JUnit.OrderServiceApplicationTests" />
-        <item itemvalue="JUnit.OrderTests" />
       </list>
     </recent_temporary>
   </component>
