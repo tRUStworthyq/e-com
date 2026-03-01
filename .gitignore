@@ -37,6 +37,6 @@ build/
 ### Mac OS ###
 .DS_Store
 
-/Gateway/.env
+.env
 
 .idea

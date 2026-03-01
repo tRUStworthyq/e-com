@@ -2,7 +2,7 @@
 spring:
   data:
     redis:
-      host: localhost
+      host: redis
       port: 6379
       password:
   application:
@@ -22,35 +22,27 @@ spring:
               - OPTIONS
             allowedHeaders: "*"
             exposedHeaders: "*"
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
       routes:
-        - id: test
-          uri: http://localhost:8082
-          predicates:
-            - Path=/test/**
         - id: cart-service
-          uri: lb://cart-service
+          uri: http://cart-service:8087
           predicates:
             - Path=/api/cart/**
           filters:
             - TokenRelay=
         - id: order-service
-          uri: lb://order-service
+          uri: http://order-service:8086
           predicates:
             - Path=/api/order/**
           filters:
             - TokenRelay=
         - id: ui
-          uri: http://localhost:3000
+          uri: http://frontend:3000
           predicates:
             - Path=/ui/**
           filters:
             - StripPrefix=1
         - id: static
-          uri: http://localhost:3000
+          uri: http://frontend:3000
           predicates:
             - Path=/static/**
   security:
@@ -58,7 +50,12 @@ spring:
       client:
         provider:
           keycloak:
-            issuer-uri: http://localhost:8081/realms/test
+            issuer-uri: http://keycloak:8080/realms/test
+            authorization-uri: http://keycloak:8080/realms/test/protocol/openid-connect/auth
+            token-uri: http://keycloak:8080/realms/test/protocol/openid-connect/token
+            jwk-set-uri: http://keycloak:8080/realms/test/protocol/openid-connect/certs
+            user-info-uri: http://keycloak:8080/realms/test/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
         registration:
           keycloak:
             provider: keycloak
@@ -71,13 +68,10 @@ spring:
               - profile
               - roles
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8765
 logging:
   level:
     org.springframework.cloud.gateway: TRACE
+    org.springframework.security: DEBUG
 

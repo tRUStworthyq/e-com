@@ -6,14 +6,14 @@ services:
       - start-dev
       - --import-realm
     ports:
-      - 8081:8081
+      - 8080:8080
     volumes:
       - ./infra/keycloak/:/opt/keycloak/data/import/
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-      KC_HTTP_PORT: 8081
-#      KC_HOSTNAME_URL: http://localhost:8080
+      KC_HOSTNAME_URL: http://keycloak:8080
+      KC_HOSTNAME_STRICT: false
 #      KC_HOSTNAME_ADMIN_URL: http://localhost:8080
 #      KC_HOSTNAME_STRICT_BACKCHANNEL: true
 #      KC_HTTP_RELATIVE_PATH: /
@@ -59,7 +59,7 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://kafka:9092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
@@ -73,7 +73,7 @@ services:
     image: provectuslabs/kafka-ui:latest
     container_name: kafka-ui
     ports:
-      - "8080:8080"
+      - "8081:8080"
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
@@ -99,13 +99,14 @@ services:
   mongodb:
     image: mongo:6.0
     container_name: mongodb
+    hostname: mongodb
     command: mongod --replSet rs0 --bind_ip_all
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      test: echo 'db.runCommand("ping").ok' | mongosh mongodb:27017/test --quiet
       interval: 10s
       timeout: 10s
       retries: 5
@@ -121,8 +122,45 @@ services:
       mongosh --host mongodb --eval '
         rs.initiate({
           _id: \"rs0\",
-          members: [{_id: 0, host: \"localhost:27017\"}]
+          members: [{_id: 0, host: \"mongodb:27017\"}]
         })'"
+
+  gateway:
+    image: admin194/gateway:latest
+    depends_on:
+      - cart-service
+      - order-service
+    restart: on-failure
+    ports:
+      - "8765:8765"
+    environment:
+      SECRET: ${CLIENT_SECRET}
+
+
+  cart-service:
+    image: admin194/cart-service:latest
+    depends_on:
+      - mongodb
+    ports:
+      - "8087:8087"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+
+  order-service:
+    image: admin194/order-service:latest
+    depends_on:
+      - mongodb
+    ports:
+      - "8086:8086"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+
+  frontend:
+    image: admin194/frontend:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - gateway
 
 volumes:
   redis_data:

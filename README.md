@@ -23,28 +23,33 @@ graph TD
     CartService <--> OrderService
 ```
 
-## Локальный запуск
+## Локальный запуск с Docker
 
-**Требования:** Java 17+, Maven 3.8+, Node.js 18+, Docker Desctop/Docker + Docker Compose
+**Требования:** Docker Desctop/Docker + Docker Compose
 
-Сначала необходимо запустить необходимые инструменты с помощью:
+Сначала необходимо запустить PowerShell **от имени администратора** клонировать репозиторий и запустить скрипт:
 ```bash
-    docker compose up -d --build
+    git clone https://github.com/tRUStworthyq/e-com
+    cd e-com
+    ./setup.ps1
 ```
 
-Далее поочередно запускаем сервисы (на примере CartService):
-```bash
-    cd CartService
-    mvn spring-boot:run -DSkipTests
-```
-Такую операцию проводим и с остальными сервисами
+Скрипт добавит строку ```127.0.0.1 keycloak``` в файл hosts и запустит контейнеры с помощью ```docker compose up -d```
 
-Далее клонируем [фронтенд репозиторий](https://github.com/tRUStworthyq/e-com-front) и запускаем:
+После запуска переходим в браузер по адресу ```keycloak:8080``` в появившейся форме вводим учетные данные: ```admin/admin```
+Выбираем realm ```test``` в верхнем-левом углу страницы
+
+Далее выбираем ```Clients -> gateway -> Credentials``` в форме находим поле ```Client Secret```. Нажимаем на кнопку ```Regenerate```
+Копируем значение из поля и добавляем в свой файл ```.env``` в корне проекта, который необходимо создать на основе .env.example
+
+Пример полученного .env файла:
+```dotenv
+    CLIENT_SECRET=some-client-secret
+```
+
+После этого перезапускаем контейнеры:
 ```bash
-    git clone https://github.com/tRUStworthyq/e-com-front
-    cd e-com-front
-    npm ci
-    npm start
+    docker compose up -d
 ```
 
 ## Roadmap
@@ -52,5 +57,5 @@ graph TD
 * [x] Базовая логика микросервисов
 * [x] Dockerfile для каждого сервиса
 * [x] CI GitHub Actions
-* [ ] Общий docker-compose файл для всего приложения
+* [x] Общий docker-compose файл для всего приложения
 * [ ] Манифесты в ```k8s/```
