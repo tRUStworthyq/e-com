@@ -43,6 +43,7 @@ graph TD
 ```bash
     git clone https://github.com/tRUStworthyq/e-com-front
     cd e-com-front
+    npm ci
     npm start
 ```
 
